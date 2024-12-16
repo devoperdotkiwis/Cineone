@@ -1,0 +1,342 @@
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <title>3D Testimonials</title>
+    <style>
+        .cineone_testimonial {
+            margin: 0;
+            font-family: 'Helvetica', sans-serif;
+            background-color: transparent;
+        }
+
+        .cineone_testimonial .testimonials {
+            background-color: transparent;
+            position: relative;
+            padding: 80px 0;
+            perspective: 1000px;
+        }
+
+        .cineone_testimonial .testimonials::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 30%;
+            background-color: transparent;
+        }
+
+        .cineone_testimonial .owl-carousel .item {
+            transform-style: preserve-3d;
+            transform: rotateY(0deg);
+            transition: transform 0.8s;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-bottom: 20px;
+            /* Ensure space between items */
+        }
+
+        .cineone_testimonial .owl-carousel .item iframe {
+            width: 100%;
+            height: 250px;
+            max-width: 500px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .cineone_testimonial .item-details {
+            background-color: rgba(40, 40, 40, 0.8);
+            color: #fff;
+            padding: 20px 15px;
+            text-align: left;
+            border-radius: 15px;
+            margin-top: -50px;
+            position: relative;
+            z-index: 2;
+            font-family: 'Montserrat', sans-serif;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            width: 100%;
+            max-width: 93%;
+        }
+
+        .cineone_testimonial .item-details:hover {
+            transform: translateY(-5px);
+        }
+
+        .cineone_testimonial .item-details h5 {
+            margin: 0 0 15px;
+            font-size: 20px;
+            font-family: 'Montserrat Bold', sans-serif;
+            letter-spacing: 1px;
+        }
+
+        .cineone_testimonial .item-details h5 span {
+            color: #DA1F26;
+            float: right;
+            padding-right: 20px;
+            font-weight: bold;
+        }
+
+        .cineone_testimonial .item-details p {
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .cineone_testimonial .stars {
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            font-size: 18px;
+            color: gold;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+        /* Video Overlay Styles */
+        .cineone_testimonial .video-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+
+        .cineone_testimonial .video-overlay iframe {
+            width: 80%;
+            height: 70%;
+            border-radius: 10px;
+        }
+
+        .cineone_testimonial .fullscreen-btn {
+            cursor: pointer;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            padding: 10px;
+            border-radius: 50%;
+            font-size: 20px;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 10;
+            transition: all 0.3s ease;
+        }
+
+        .cineone_testimonial .fullscreen-btn:hover {
+            background-color: #DA1F26;
+            transform: scale(1.1);
+        }
+
+        /* Mobile Responsiveness */
+        .cineone_testimonial @media screen and (max-width: 767px) {
+            .cineone_testimonial .testimonials {
+                padding: 40px 0;
+            }
+
+            .cineone_testimonial .item-details {
+                padding: 15px;
+                max-width: 90%;
+                margin-top: -30px;
+                text-align: center;
+            }
+
+            .cineone_testimonial .item-details h5 {
+                font-size: 18px;
+                margin-bottom: 10px;
+            }
+
+            .cineone_testimonial .item-details p {
+                font-size: 13px;
+                margin-bottom: 10px;
+            }
+
+            .cineone_testimonial .stars {
+                font-size: 16px;
+            }
+
+            .cineone_testimonial .owl-carousel .item iframe {
+                height: 200px;
+            }
+
+            /* Ensure the video and text align correctly */
+            .cineone_testimonial .owl-carousel .item {
+                flex-direction: column;
+                /* Stack items vertically */
+                align-items: center;
+                /* Center content */
+            }
+        }
+
+        .cineone_testimonial @media screen and (max-width: 480px) {
+            .cineone_testimonial .item-details {
+                max-width: 93%;
+                margin-top: -20px;
+            }
+
+            .cineone_testimonial .item-details h5 {
+                font-size: 16px;
+            }
+
+            .cineone_testimonial .item-details p {
+                font-size: 12px;
+            }
+
+            .cineone_testimonial .stars {
+                font-size: 14px;
+            }
+
+            .cineone_testimonial .owl-carousel .item iframe {
+                height: 180px;
+            }
+        }
+    </style>
+
+
+
+    <div class="cineone_testimonial">
+        <section class="testimonials">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div id="customers-testimonials" class="owl-carousel">
+                            <div class="item">
+                                <iframe id="video1" src="https://www.youtube.com/embed/KRrr1gM-SN8?autoplay=0&amp;mute=1&amp;loop=1&amp;playlist=KRrr1gM-SN8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+                                <div class="fullscreen-btn" onclick="showVideo('https://youtu.be/KRrr1gM-SN8')">
+                                    <i class="fas fa-expand"></i>
+                                </div>
+                                <div class="item-details">
+                                    <h5>TESTIMONIAL <span>CINEONE</span></h5>
+                                    <p>Description for Testimonial</p>
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <iframe id="video2" src="https://www.youtube.com/embed/qmU7_ZmRhBY?autoplay=0&amp;mute=1&amp;loop=1&amp;playlist=qmU7_ZmRhBY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+                                <div class="fullscreen-btn" onclick="showVideo('https://youtu.be/qmU7_ZmRhBY')">
+                                    <i class="fas fa-expand"></i>
+                                </div>
+                                <div class="item-details">
+                                    <h5>TESTIMONIAL <span>CINEONE</span></h5>
+                                    <p>Description for Testimonial</p>
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <iframe id="video3" src="https://www.youtube.com/embed/olMuCAx6TeI?autoplay=0&amp;mute=1&amp;loop=1&amp;playlist=olMuCAx6TeI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+                                <div class="fullscreen-btn" onclick="showVideo('https://youtu.be/olMuCAx6TeI')">
+                                    <i class="fas fa-expand"></i>
+                                </div>
+                                <div class="item-details">
+                                    <h5>TESTIMONIAL <span>CINEONE</span></h5>
+                                    <p>Description for Testimonial</p>
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <iframe id="video4" src="https://www.youtube.com/embed/a8iAS5T1Bls?autoplay=0&amp;mute=1&amp;loop=1&amp;playlist=a8iAS5T1Bls" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+                                <div class="fullscreen-btn" onclick="showVideo('https://youtu.be/a8iAS5T1Bls')">
+                                    <i class="fas fa-expand"></i>
+                                </div>
+                                <div class="item-details">
+                                    <h5>TESTIMONIAL <span>CINEONE</span></h5>
+                                    <p>Description for Testimonial</p>
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="video-overlay" id="video-overlay">
+                            <iframe id="fullscreen-video" frameborder="0" allow="autoplay; fullscreen"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script>
+        jQuery(document).ready(function ($) {
+            $("#customers-testimonials").owlCarousel({
+                loop: true,
+                center: true,
+                items: 3,
+                margin: 30,
+                autoplay: true,
+                dots: true,
+                nav: true,
+                autoplayTimeout: 7500,
+                smartSpeed: 450,
+                navText: [
+                    '<i class="fa fa-angle-left"></i>',
+                    '<i class="fa fa-angle-right"></i>'
+                ],
+                responsive: {
+                    0: { items: 1 },
+                    768: { items: 2 },
+                    1170: { items: 3 }
+                }
+            });
+        });
+
+        function showVideo(videoSrc) {
+            const overlay = document.getElementById('video-overlay');
+            const fullscreenVideo = document.getElementById('fullscreen-video');
+
+            fullscreenVideo.src = videoSrc + "?autoplay=1&controls=1";
+            overlay.style.display = 'flex';
+
+            overlay.onclick = function () {
+                overlay.style.display = 'none';
+                fullscreenVideo.src = "";
+            };
+        }
+    </script>

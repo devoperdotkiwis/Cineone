@@ -1,0 +1,418 @@
+<meta charset="UTF-8">
+  <title>Animated Slider | Swiper JS &amp; Particles JS</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.cineone_slider .particles {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.cineone_slider .container {
+  width: 100%;
+  height: 100%;
+}
+
+.cineone_slider .swiper {
+  width: 100%;
+  padding: 50px 0;
+}
+
+.cineone_slider .swiper-slide {
+  position: relative;
+  width: 200px;
+  height: 500px;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: 1s;
+  user-select: none;
+}
+
+.cineone_slider .swiper-slide::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(130, 13, 13, 0.8),
+    rgba(39, 8, 92, 0.8)
+  );
+  mix-blend-mode: multiply;
+  z-index: 1;
+}
+
+.cineone_slider .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 1s;
+}
+
+.cineone_slider .swiper-slide p {
+  position: absolute;
+  left: 20px;
+  bottom: 10px;
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 600;
+  font-style: italic;
+  letter-spacing: 2px;
+  z-index: 2;
+  opacity: 0;
+  transform: rotate(360deg) scale(0);
+  transition: 0.8s;
+}
+
+.cineone_slider .swiper-slide-active {
+  position: relative;
+  width: 350px;
+  transition: 1s;
+}
+
+.cineone_slider .swiper-slide-active::after {
+  background: rgba(123, 123, 123, 0.4);
+}
+
+.cineone_slider .swiper-slide-active img {
+  transform: scale(1.3);
+  object-position: 50% 0%;
+}
+
+.cineone_slider .swiper-slide-active p {
+  transform: rotate(0deg) scale(1);
+  opacity: 1;
+}
+
+.cineone_slider .swiper-pagination-bullet {
+  width: 16px;
+  height: 16px;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: all 0.6s ease-in-out;
+}
+
+.cineone_slider .swiper-pagination-bullet-active {
+  width: 32px;
+  background-color: #6f1223;
+  border-radius: 14px;
+}
+
+.cineone_slider .audio-icon {
+  font-size: 2rem;
+  color: #fff;
+}
+
+.cineone_slider #play-pause-button {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 3%;
+  bottom: 5%;
+  background-color: transparent;
+  background-image: radial-gradient(
+    50% 115% at 50% -5%,
+    rgba(255, 255, 255, 0.11) 0%,
+    transparent 100%
+  );
+  box-shadow: inset 0 0px 10px 0px rgba(255, 255, 255, 0.14),
+    inset 0px 5px 10px 0px rgba(255, 255, 255, 0.11),
+    inset 0px 2px 5px 0px rgba(255, 255, 255, 0.4),
+    inset 0px 3px 20px 0px rgba(0, 0, 0, 0.25);
+  z-index: 10;
+  border: 0;
+  border-radius: 50%;
+  outline: 0;
+  padding: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.cineone_slider #play-pause-button:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.cineone_slider #play-pause-button:active {
+  transform: scale(0.95);
+}
+
+.cineone_slider .hidden {
+  display: none;
+}
+
+.cineone_slider .logo {
+  position: fixed;
+  right: -20px;
+  bottom: -35px;
+  z-index: 10;
+}
+
+.cineone_slider .logo img {
+  width: 120px;
+}
+
+@media (max-width: 890px) {
+  .cineone_slider .logo {
+    right: -10px;
+    bottom: -20px;
+  }
+
+  .cineone_slider .logo img {
+    width: 80px;
+  }
+}
+/* ================================================== */
+/* CHANGES */
+.cineone_slider .swiper-slide {
+    position: relative;
+    width: 200px;
+    height: 500px;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 1s ease, box-shadow 1s ease;
+    user-select: none;
+  }
+
+  .cineone_slider .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    transition: transform 1s ease;
+  }
+
+  .cineone_slider .swiper-slide-active {
+    transform: scale(1.2) translateZ(50px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  }
+
+  .cineone_slider .swiper-slide-active img {
+    transform: scale(1.1);
+  }
+
+  .cineone_slider .swiper-slide:not(.swiper-slide-active) {
+    opacity: 0.6;
+    transform: scale(0.8);
+  }
+
+  .cineone_slider .swiper-slide {
+    position: relative;
+    width: 200px;
+    height: 500px;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 1s ease, opacity 1s ease;
+    user-select: none;
+  }
+
+  /* All Slides */
+  .cineone_slider .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    transition: transform 1s ease, object-fit 1s ease;
+  }
+
+  /* Active Slide */
+  .cineone_slider .swiper-slide-active {
+    width: auto; /* Adjust to image size */
+    height: auto; /* Adjust to image size */
+    max-width: 100%; /* Optional: Limit the active slide size */
+    max-height: 60%; /* Optional: Limit the active slide size */
+    transform: scale(1.1);
+    z-index: 2; /* Keep the active slide above others */
+  }
+
+  .cineone_slider .swiper-slide-active img {
+    object-fit: contain; /* Ensure the image fits within the slide */
+    transform: scale(1);
+  }
+
+  /* Non-Focused Slides */
+  .cineone_slider .swiper-slide:not(.swiper-slide-active) {
+    opacity: 0.6;
+    transform: scale(0.9);
+  }
+
+  .cineone_slider .swiper-slide:not(.swiper-slide-active) img {
+    object-fit: cover; /* Fill the entire slide */
+  }
+   /* ============================================================Thrid Chnage */
+   
+
+  </style>
+
+
+
+
+<div class="cineone_slider">
+
+
+    <div id="particles-js" class="particles"></div>
+
+    <div class="container" style="margin-left: 0px;margin-right: 0px;">
+      <div class="swiper" style="width: 1920px;">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="https://raw.githubusercontent.com/devoperdotkiwis/Cineone/refs/heads/main/Solutions/Home_Theatre.webp" loading="lazy">
+            <p>Home Theatre</p>
+          </div>
+          <div class="swiper-slide">
+            <img src="https://raw.githubusercontent.com/devoperdotkiwis/Cineone/refs/heads/main/Solutions/Home%20Cinema.webp" loading="lazy">
+            <p>Home Cinema</p>
+          </div>
+          <div class="swiper-slide">
+            <img src="https://raw.githubusercontent.com/devoperdotkiwis/Cineone/refs/heads/main/Solutions/Luxury%20Living.webp" loading="lazy">
+            <p>Luxary Living</p>
+          </div>
+          <div class="swiper-slide">
+            <img src="https://raw.githubusercontent.com/devoperdotkiwis/Cineone/refs/heads/main/Solutions/Multi%20Room%20Audio.webp" loading="lazy">
+            <p>Multi Room Audio</p>
+          </div>
+          <div class="swiper-slide">
+            <img src="https://raw.githubusercontent.com/devoperdotkiwis/Cineone/refs/heads/main/Solutions/Out%20door%20Audio.webp" loading="lazy">
+            <p>OutdoorAudio</p>
+          </div>
+          <div class="swiper-slide">
+            <img src="https://raw.githubusercontent.com/devoperdotkiwis/Cineone/refs/heads/main/Solutions/Pro%20Audio.webp" loading="lazy">
+            <p>Pro Audio</p>
+          </div>
+          <div class="swiper-slide">
+            <img src="https://raw.githubusercontent.com/devoperdotkiwis/Cineone/refs/heads/main/Solutions/dphomet748.webp" loading="lazy">
+            <p>Furnishing &amp; Acoustic</p>
+          </div>
+          <div class="swiper-slide">
+            <img src="https://raw.githubusercontent.com/devoperdotkiwis/Cineone/refs/heads/main/Solutions/Home_Theatre.webp" loading="lazy">
+            <p>Home Theatre</p>
+          </div>
+          <div class="swiper-slide">
+            <img src="https://raw.githubusercontent.com/devoperdotkiwis/Cineone/refs/heads/main/Solutions/Home%20Cinema.webp" loading="lazy">
+            <p>Home Cinema</p>
+          </div>
+          <div class="swiper-slide">
+            <img src="https://raw.githubusercontent.com/devoperdotkiwis/Cineone/refs/heads/main/Solutions/Luxury%20Living.webp" loading="lazy">
+            <p>Luxary Living</p>
+          </div>
+          <div class="swiper-slide">
+            <img src="https://raw.githubusercontent.com/devoperdotkiwis/Cineone/refs/heads/main/Solutions/Multi%20Room%20Audio.webp" loading="lazy">
+            <p>Multi Room Audio</p>
+          </div>
+          <div class="swiper-slide">
+            <img src="https://raw.githubusercontent.com/devoperdotkiwis/Cineone/refs/heads/main/Solutions/Out%20door%20Audio.webp" loading="lazy">
+            <p>OutdoorAudio</p>
+          </div>
+          <div class="swiper-slide">
+            <img src="https://raw.githubusercontent.com/devoperdotkiwis/Cineone/refs/heads/main/Solutions/Pro%20Audio.webp" loading="lazy">
+            <p>Pro Audio</p>
+          </div>
+          <div class="swiper-slide">
+            <img src="https://raw.githubusercontent.com/devoperdotkiwis/Cineone/refs/heads/main/Solutions/dphomet748.webp" loading="lazy">
+            <p>Furnishing &amp; Acoustic</p>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+   
+  
+  </div>
+
+<script src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+ var swiper = new Swiper(".swiper", {
+    grabCursor: true,
+    initialSlide: 3,
+    centeredSlides: true,
+    slidesPerView: "auto",
+    spaceBetween: 10,
+    speed: 1000,
+    loop: true,
+    freeMode: false,
+    mousewheel: false,
+    pagination: {
+      el: ".swiper-pagination",
+    },
+    autoplay: {
+      delay: 500000000000, // 5 seconds autoplay delay
+      disableOnInteraction: false,
+      pauseOnMouseEnter: false,
+    },
+    on: {
+      click(event) {
+        swiper.slideTo(this.clickedIndex);
+      },
+    },
+  });
+  
+  particlesJS("particles-js", {
+    particles: {
+      number: {
+        value: 180,
+        density: {
+          enable: true,
+          value_area: 800,
+        },
+      },
+      color: {
+        value: "#fff",
+      },
+      shape: {
+        type: "circle",
+      },
+      opacity: {
+        value: 0.3,
+        random: false,
+        anim: {
+          enable: false,
+          speed: 4,
+          opacity_min: 0.1,
+          sync: false,
+        },
+      },
+      size: {
+        value: 4,
+        random: true,
+        anim: {
+          enable: true,
+          speed: 2,
+          size_min: 0.1,
+          sync: false,
+        },
+      },
+      line_linked: {
+        enable: false,
+      },
+      move: {
+        enable: true,
+        speed: 0.4,
+        direction: "right",
+        random: true,
+        straight: false,
+        out_mode: "none",
+        bounce: false,
+        attract: {
+          enable: false,
+          rotateX: 600,
+          rotateY: 1200,
+        },
+      },
+    },
+    retina_detect: true,
+  });
+  </script>

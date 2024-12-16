@@ -1,0 +1,641 @@
+<meta charset="UTF-8">
+  <title>Product Showcase UI</title>
+  <link rel="stylesheet" href="https://github.com/devoperdotkiwis/Cineone/blob/main/Product_Showcase/normalize.min.css">
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap");
+:root {
+  --body-color: #2c2d2a;
+  --arrow-fill: #333231;
+  --body-font: "Montserrat", sans-serif;
+  --italic-font: "EB Garamond", serif;
+}
+
+.cineone-showcase * {
+  box-sizing: border-box;
+  outline: none;
+}
+
+.cineone-showcase img {
+  max-width: 100%;
+}
+
+.cineone-showcase a {
+  text-decoration: none;
+  color: var(--body-color);
+}
+
+.cineone-showcase h1,
+.cineone-showcase h2,
+.cineone-showcase h3 {
+  margin: 0;
+}
+
+@media (max-width: 480px) {
+  .cineone-showcase body {
+    padding: 0;
+  }
+}
+
+.cineone-showcase .container {
+  max-width: 1100px;
+  border-radius: 4px;
+  max-height: 680px;
+  height: 90vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  scroll-behavior: smooth;
+  padding: 0 30px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+}
+
+@media (max-width: 480px) {
+  .cineone-showcase .container {
+    height: 100%;
+    max-height: 100%;
+  }
+}
+
+.cineone-showcase .logo {
+  width: 116px;
+}
+
+.cineone-showcase .header {
+  display: flex;
+  align-items: center;
+  height: 62px;
+  width: 100%;
+  white-space: nowrap;
+  flex-shrink: 0;
+  font-weight: 600;
+  font-size: 15px;
+  border-bottom: 1px solid rgba(44, 45, 42, 0.25);
+  position: sticky;
+  top: 0;
+  left: 0;
+  background-color: var(--beach-bg);
+  z-index: 6;
+}
+
+@media (max-width: 575px) {
+  .cineone-showcase .header {
+    width: calc(100% + 20px);
+    margin-left: -10px;
+  }
+}
+
+.cineone-showcase .header-menu {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+@media screen and (max-width: 740px) {
+  .cineone-showcase .header-menu {
+    display: none;
+  }
+}
+
+.cineone-showcase .header-menu a:not(:first-child) {
+  margin-left: 30px;
+}
+
+.cineone-showcase .header .menu-icon {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.cineone-showcase .header .menu-icon svg {
+  width: 22px;
+}
+
+.cineone-showcase .header-icons {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.cineone-showcase .header-icons svg {
+  width: 18px;
+}
+
+.cineone-showcase .header-icons svg:not(:last-child) {
+  margin-right: 20px;
+}
+
+.cineone-showcase .left-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 320px;
+}
+
+@media screen and (max-width: 930px) {
+  .cineone-showcase .left-side {
+    text-align: center;
+    max-width: 450px;
+  }
+}
+
+.cineone-showcase .mySwiper {
+  display: flex;
+  flex-grow: 1;
+  position: relative;
+}
+
+.cineone-showcase .main {
+  padding: 42px 0 30px;
+  display: flex;
+  flex-grow: 1;
+  position: relative;
+}
+
+@media screen and (max-width: 930px) {
+  .cineone-showcase .main {
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.cineone-showcase .main-header {
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 4px;
+  font-weight: 600;
+  transition-delay: 0.2s;
+}
+
+.cineone-showcase .main-title {
+  font-family: var(--italic-font);
+  font-size: 100px;
+  font-weight: 400;
+  margin-top: 10px;
+  line-height: 1em;
+  transition-delay: 0.3s;
+}
+
+.cineone-showcase .main-subtitle {
+  font-family: var(--italic-font);
+  font-weight: 400;
+  font-size: 32px;
+  margin-top: 14px;
+  margin-bottom: 60px;
+  transition-delay: 0.4s;
+}
+
+.cineone-showcase .main-content__title {
+  font-size: 26px;
+  font-family: var(--italic-font);
+  font-style: italic;
+  margin-bottom: 14px;
+  transition-delay: 0.2s;
+}
+
+.cineone-showcase .main-content__subtitle {
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 24px;
+  letter-spacing: -0.01em;
+  transition-delay: 0.3s;
+}
+
+.cineone-showcase .main-content .more-menu {
+  font-size: 13px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  transition-delay: 0.4s;
+}
+
+@media screen and (max-width: 930px) {
+  .cineone-showcase .main-content .more-menu {
+    justify-content: center;
+  }
+}
+
+.cineone-showcase .main-content .more-menu svg {
+  width: 28px;
+  height: 18px;
+  margin-left: 10px;
+}
+
+.cineone-showcase .center {
+  display: flex;
+  margin-left: 20%;
+  position: relative;
+  flex-shrink: 0;
+}
+
+@media screen and (max-width: 930px) {
+  .cineone-showcase .center {
+    margin-left: 0;
+    margin-bottom: 56px;
+  }
+}
+
+.cineone-showcase .center .bottle-bg {
+  width: 430px;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 160px;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
+
+}
+
+@media screen and (max-width: 930px) {
+  .cineone-showcase .center .bottle-bg {
+    width: 260px;
+    height: 390px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .cineone-showcase .center .bottle-bg {
+    width: 220px;
+    height: 340px;
+  }
+}
+
+.cineone-showcase .center .bottle-img {
+  position: absolute;
+  top: 35%;
+  left: -30%;
+  transform: scale(1.6);
+}
+
+.cineone-showcase .swiper-pagination {
+  position: absolute;
+  right: 30px;
+  left: auto;
+  top: 100px;
+  width: auto;
+  bottom: auto;
+  z-index: 2;
+  font-size: 14px;
+  font-family: var(--body-font);
+  font-weight: 500;
+}
+
+.cineone-showcase .button-wrapper {
+  position: absolute;
+  right: 30px;
+  bottom: 20px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (max-width: 930px) {
+  .cineone-showcase .button-wrapper {
+    top: 0;
+    left: 0;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 60px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .cineone-showcase .button-wrapper {
+    padding: 0 20px;
+  }
+}
+
+.cineone-showcase .button-wrapper svg {
+  width: 28px;
+}
+
+.cineone-showcase .button-wrapper .swiper-button {
+  border: 1px solid var(--body-color);
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to right, var(--body-color) 40%, transparent 0%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: all 0.3s ease-out;
+  cursor: pointer;
+}
+
+.cineone-showcase .button-wrapper .swiper-button + .swiper-button {
+  margin-left: 16px;
+}
+
+@media screen and (max-width: 930px) {
+  .cineone-showcase .button-wrapper .swiper-button + .swiper-button {
+    margin-left: 0;
+  }
+}
+
+.cineone-showcase .button-wrapper .swiper-button:hover {
+  background-color: var(--body-color);
+  background-position: left bottom;
+}
+
+.cineone-showcase .button-wrapper .swiper-button:hover svg {
+  stroke: #fff;
+}
+
+.cineone-showcase .button-wrapper .swiper-prev-button {
+  background: linear-gradient(to left, var(--body-color) 40%, transparent 0%);
+  background-size: 200% 100%;
+  background-position: left bottom;
+  transition: all 0.3s ease-out;
+}
+
+.cineone-showcase .button-wrapper .swiper-prev-button svg {
+  transform: rotate(-180deg);
+}
+
+.cineone-showcase .button-wrapper .swiper-prev-button:hover {
+  background-position: right bottom;
+}
+
+.cineone-showcase .swiper-slide {
+  opacity: 0 !important;
+  transition: 0.4s;
+}
+
+.cineone-showcase .swiper-slide-active {
+  opacity: 1 !important;
+}
+
+.cineone-showcase .swiper-slide .main-wrapper > *,
+.cineone-showcase .swiper-slide .main-content > * {
+  transform: translateY(-30px);
+  opacity: 0;
+  transition-duration: 0.8s;
+}
+
+.cineone-showcase .swiper-slide-active .main-wrapper > *,
+.cineone-showcase .swiper-slide-active .main-content > * {
+  transform: none;
+  opacity: 1;
+}
+
+.cineone-showcase .swiper-slide .bottle-bg {
+  transition-duration: 0.6s;
+  opacity: 0;
+  object-position: 60%;
+}
+
+.cineone-showcase .swiper-slide-active .bottle-bg {
+  opacity: 1;
+  transform: none;
+  object-position: 50%;
+}
+
+.cineone-showcase .swiper-slide .bottle-img {
+  transition-duration: 0.8s;
+  transform: scale(1.2);
+  opacity: 0;
+}
+
+.cineone-showcase .swiper-slide-active .bottle-img {
+  opacity: 1;
+  transform: scale(1.6);
+}
+
+[data-sld="1"] .cineone-showcase .container,
+[data-sld="1"] .cineone-showcase .header {
+  background-color: var(--savanna-bg);
+}
+
+[data-sld="2"] .cineone-showcase .container,
+[data-sld="2"] .cineone-showcase .header {
+  background-color: var(--glacier-bg);
+}
+
+[data-sld="3"] .cineone-showcase .container,
+[data-sld="3"] .cineone-showcase .header {
+  background-color: var(--coral-bg);
+}
+
+</style>
+
+
+
+
+ <div class="cineone-showcase">
+<div class="container">
+	<div class="mySwiper">
+		<div class="main-wrapper swiper-wrapper">
+			<div class="main swiper-slide" id="beach">
+				<div class="left-side">
+					<div class="main-wrapper">
+						<h3 class="main-header">Cineone</h3>
+						<h1 class="main-title">Cylinder Tall</h1>
+						<h2 class="main-subtitle">Rs 20,000</h2>
+					</div>
+					<div class="main-content">
+						<div class="main-content__title">The AS Cylinders</div>
+						<div class="main-content__subtitle">The AS Cylinders were designed as part of the VDLine in collaboration with landscape architect Vladimir Djurovic, winning the “A+ Architizer” Award in the “Product&amp;Acoustic” category, an international definition of the quest for sound and design excellence.</div>
+						<div class="more-menu">
+							Shop Now
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.7" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+								<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+								<line x1="-5" y1="12" x2="19" y2="12"></line>
+								<line x1="15" y1="16" x2="19" y2="12"></line>
+								<line x1="15" y1="8" x2="19" y2="12"></line>
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div class="center">
+					<div class="right-side__img">
+						<img class="bottle-bg" src="https://raw.githubusercontent.com/devoperdotkiwis/Cineone/refs/heads/main/Product_Showcase/Images/1.png" alt="" loading="lazy">
+						<img class="bottle-img" src="https://raw.githubusercontent.com/devoperdotkiwis/Cineone/refs/heads/main/Product_Showcase/Images/1-2.png" loading="lazy">
+					</div>
+				</div>
+			</div>
+			<div class="main swiper-slide" id="beach">
+				<div class="left-side">
+					<div class="main-wrapper">
+						<h3 class="main-header">Cineone</h3>
+						<h1 class="main-title">Cylinder Table</h1>
+						<h2 class="main-subtitle">Rs 20,000</h2>
+					</div>
+					<div class="main-content">
+						<div class="main-content__title">The AS Cylinders</div>
+						<div class="main-content__subtitle">The AS Cylinders were designed as part of the VDLine in collaboration with landscape architect Vladimir Djurovic, winning the “A+ Architizer” Award in the “Product&amp;Acoustic” category, an international definition of the quest for sound and design excellence.</div>
+						<div class="more-menu">
+							Shop Now
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.7" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+								<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+								<line x1="-5" y1="12" x2="19" y2="12"></line>
+								<line x1="15" y1="16" x2="19" y2="12"></line>
+								<line x1="15" y1="8" x2="19" y2="12"></line>
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div class="center">
+					<div class="right-side__img">
+						<img class="bottle-bg" src="https://github.com/devoperdotkiwis/Cineone/blob/main/Product_Showcase/Images/2.png?raw=true" alt="" loading="lazy">
+						<img class="bottle-img" src="https://github.com/devoperdotkiwis/Cineone/blob/main/Product_Showcase/Images/2-2.png?raw=true" loading="lazy">
+					</div>
+				</div>
+			</div>
+			<div class="main swiper-slide" id="beach">
+				<div class="left-side">
+					<div class="main-wrapper">
+						<h3 class="main-header">Cineone</h3>
+						<h1 class="main-title">Small Drop</h1>
+						<h2 class="main-subtitle">Rs 20,000</h2>
+					</div>
+					<div class="main-content">
+						<div class="main-content__title">The Small Drop</div>
+						<div class="main-content__subtitle">"The nature-inspired and clean design of the Small Drop makes it an ideal application in various settings. Small Drop is a satellite-suspended sound diffuser, highly directional with a bright tonal balance that generates "sound corridors".</div>
+						<div class="more-menu">
+							Shop Now
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.7" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+								<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+								<line x1="-5" y1="12" x2="19" y2="12"></line>
+								<line x1="15" y1="16" x2="19" y2="12"></line>
+								<line x1="15" y1="8" x2="19" y2="12"></line>
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div class="center">
+					<div class="right-side__img">
+						<img class="bottle-bg" src="https://github.com/devoperdotkiwis/Cineone/blob/main/Product_Showcase/Images/3.png?raw=true" alt="" loading="lazy">
+						<img class="bottle-img" src="https://github.com/devoperdotkiwis/Cineone/blob/main/Product_Showcase/Images/3-2.png?raw=true/1100x1100" loading="lazy">
+					</div>
+				</div>
+			</div>
+			<div class="main swiper-slide" id="savanna">
+				<div class="left-side">
+					<div class="main-wrapper">
+						<h3 class="main-header">Cineone</h3>
+						<h1 class="main-title">Cylinder Medium</h1>
+						<h2 class="main-subtitle">Rs 20,000</h2>
+					</div>
+					<div class="main-content">
+						<div class="main-content__title">The AS Cylinders
+						</div>
+						<div class="main-content__subtitle">The AS Cylinders were designed as part of the VDLine in collaboration with landscape architect Vladimir Djurovic, winning the “A+ Architizer” Award in the “Product&amp;Acoustic” category, an international definition of the quest for sound and design excellence.</div>
+						<div class="more-menu">
+							Shop Now
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.7" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+								<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+								<line x1="-5" y1="12" x2="19" y2="12"></line>
+								<line x1="15" y1="16" x2="19" y2="12"></line>
+								<line x1="15" y1="8" x2="19" y2="12"></line>
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div class="center">
+					<div class="right-side__img">
+						<img class="bottle-bg" src="https://github.com/devoperdotkiwis/Cineone/blob/main/Product_Showcase/Images/4.png?raw=true" alt="" loading="lazy">
+						<img class="bottle-img" src="https://github.com/devoperdotkiwis/Cineone/blob/main/Product_Showcase/Images/4-2.png?raw=true" loading="lazy">
+					</div>
+				</div>
+			</div>
+			<div class="main swiper-slide" id="glacier">
+				<div class="left-side">
+					<div class="main-wrapper">
+						<h3 class="main-header">Cineone</h3>
+						<h1 class="main-title">Icarus</h1>
+						<h2 class="main-subtitle">Rs20,000</h2>
+					</div>
+					<div class="main-content">
+						<div class="main-content__title">The Icarus MultiStand
+						</div>
+						<div class="main-content__subtitle">ICARUS is the new range of speakers designed by Giulia Archimede and developed by AS, conceived to offer an alternative and complementary acoustic solution to our current production, seamlessly integrating with any design or space without compromising on sound quality.</div>
+						<div class="more-menu">
+							Shop Now
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.7" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+								<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+								<line x1="-5" y1="12" x2="19" y2="12"></line>
+								<line x1="15" y1="16" x2="19" y2="12"></line>
+								<line x1="15" y1="8" x2="19" y2="12"></line>
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div class="center">
+					<div class="right-side__img">
+						<img class="bottle-bg" src="https://github.com/devoperdotkiwis/Cineone/blob/main/Product_Showcase/Images/5.png?raw=true" alt="" loading="lazy">
+						<img class="bottle-img" src="https://github.com/devoperdotkiwis/Cineone/blob/main/Product_Showcase/Images/5-2.png?raw=true" loading="lazy">
+					</div>
+				</div>
+			</div>
+			<div class="main swiper-slide" id="coral">
+				<div class="left-side">
+					<div class="main-wrapper">
+						<h3 class="main-header">Cineone</h3>
+						<h1 class="main-title">Spherina Air</h1>
+						<h2 class="main-subtitle">Rs 20,000</h2>
+					</div>
+					<div class="main-content">
+						<div class="main-content__title">The "Spherina" family                            
+						</div>
+						<div class="main-content__subtitle">he "Spherina" family, the most adaptable spherical omnidirectional speaker collection.
+                            Spherina goes back to the Architettura Sonora's roots, Sphere, an iconic image of High-End speakers, reworking and redisigning the shape into a new context, using new materials and refined details.
+                            </div>
+						<div class="more-menu">
+							Shop Now
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.7" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+								<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+								<line x1="-5" y1="12" x2="19" y2="12"></line>
+								<line x1="15" y1="16" x2="19" y2="12"></line>
+								<line x1="15" y1="8" x2="19" y2="12"></line>
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div class="center">
+					<div class="right-side__img">
+						<img class="bottle-bg" src="https://github.com/devoperdotkiwis/Cineone/blob/main/Product_Showcase/Images/6.png?raw=true" alt="" loading="lazy">
+						<img class="bottle-img" src="https://github.com/devoperdotkiwis/Cineone/blob/main/Product_Showcase/Images/7-2.png?raw=true" loading="lazy">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="button-wrapper">
+		<div class="swiper-button swiper-prev-button">
+			<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+			</svg>
+		</div>
+		<div class="swiper-button swiper-next-button">
+			<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+			</svg>
+		</div>
+	</div>
+	<div class="swiper-pagination"></div>
+</div>
+</div>
+
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+  navigation: {
+    nextEl: ".swiper-next-button",
+    prevEl: ".swiper-prev-button" },
+
+  effect: "fade",
+  loop: "infinite",
+  pagination: {
+    el: ".swiper-pagination",
+    type: "fraction" } });
+
+
+
+swiper.on('slideChange', function (sld) {
+  document.body.setAttribute('data-sld', sld.realIndex);
+});
+  </script>
