@@ -1,0 +1,81 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How We Work</title>
+<style>
+    :root {
+        --animation-speed: 40s;
+    }
+
+    .scroller-container {
+        overflow: hidden;
+        background-color: #f8f9fa;
+        padding: 20px 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        position: relative;
+    }
+
+    .scroller {
+        display: flex;
+        gap: 0px;
+        animation: scroll-animation var(--animation-speed) linear infinite;
+    }
+
+    .scroller img {
+        max-height: 150px;
+        transition: transform 0.2s;
+    }
+
+    .scroller img:hover {
+        transform: scale(1.2);
+    }
+
+    @keyframes scroll-animation {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+</style>
+
+
+
+<div class="scroller-container">
+    <div class="scroller">
+        <img src="https://raw.githubusercontent.com/devoperdotkiwis/Cineone/refs/heads/main/Brands%20we%20deal/Images/1.webp" alt="Brand 1" loading="lazy">
+        <img src="https://raw.githubusercontent.com/devoperdotkiwis/Cineone/refs/heads/main/Brands%20we%20deal/Images/2.webp" alt="Brand 2" loading="lazy">
+        <img src="https://raw.githubusercontent.com/devoperdotkiwis/Cineone/refs/heads/main/Brands%20we%20deal/Images/3.webp" alt="Brand 3" loading="lazy">
+        <img src="https://raw.githubusercontent.com/devoperdotkiwis/Cineone/refs/heads/main/Brands%20we%20deal/Images/4.webp" alt="Brand 4" loading="lazy">
+        <img src="https://raw.githubusercontent.com/devoperdotkiwis/Cineone/refs/heads/main/Brands%20we%20deal/Images/5.webp" alt="Brand 5" loading="lazy">
+        <img src="https://raw.githubusercontent.com/devoperdotkiwis/Cineone/refs/heads/main/Brands%20we%20deal/Images/6.webp" alt="Brand 6" loading="lazy">
+        <img src="https://raw.githubusercontent.com/devoperdotkiwis/Cineone/refs/heads/main/Brands%20we%20deal/Images/7.webp" alt="Brand 7" loading="lazy">
+        <img src="https://raw.githubusercontent.com/devoperdotkiwis/Cineone/refs/heads/main/Brands%20we%20deal/Images/8.webp" alt="Brand 8" loading="lazy">
+        <img src="https://raw.githubusercontent.com/devoperdotkiwis/Cineone/refs/heads/main/Brands%20we%20deal/Images/9.webp" alt="Brand 9" loading="lazy">
+        <img src="https://raw.githubusercontent.com/devoperdotkiwis/Cineone/refs/heads/main/Brands%20we%20deal/Images/10.webp" alt="Brand 10" loading="lazy">
+        <img src="https://raw.githubusercontent.com/devoperdotkiwis/Cineone/refs/heads/main/Brands%20we%20deal/Images/11.webp" alt="Brand 11" loading="lazy">
+        <img src="https://raw.githubusercontent.com/devoperdotkiwis/Cineone/refs/heads/main/Brands%20we%20deal/Images/12.webp" alt="Brand 12" loading="lazy">
+        <img src="https://raw.githubusercontent.com/devoperdotkiwis/Cineone/refs/heads/main/Brands%20we%20deal/Images/13.webp" alt="Brand 13" loading="lazy">
+        <img src="https://raw.githubusercontent.com/devoperdotkiwis/Cineone/refs/heads/main/Brands%20we%20deal/Images/14.webp" alt="Brand 14" loading="lazy">
+        <img src="https://raw.githubusercontent.com/devoperdotkiwis/Cineone/refs/heads/main/Brands%20we%20deal/Images/15.webp" alt="Brand 15" loading="lazy">
+        <img src="https://raw.githubusercontent.com/devoperdotkiwis/Cineone/refs/heads/main/Brands%20we%20deal/Images/16.webp" alt="Brand 16" loading="lazy">
+        <img src="https://raw.githubusercontent.com/devoperdotkiwis/Cineone/refs/heads/main/Brands%20we%20deal/Images/17.webp" alt="Brand 17" loading="lazy">
+        <img src="https://raw.githubusercontent.com/devoperdotkiwis/Cineone/refs/heads/main/Brands%20we%20deal/Images/18.webp" alt="Brand 18" loading="lazy">
+        <img src="https://raw.githubusercontent.com/devoperdotkiwis/Cineone/refs/heads/main/Brands%20we%20deal/Images/19.webp" alt="Brand 19" loading="lazy">
+        <img src="https://raw.githubusercontent.com/devoperdotkiwis/Cineone/refs/heads/main/Brands%20we%20deal/Images/20.webp" alt="Brand 20" loading="lazy">
+        <img src="https://raw.githubusercontent.com/devoperdotkiwis/Cineone/refs/heads/main/Brands%20we%20deal/Images/21.webp" alt="Brand 21" loading="lazy">
+        <img src="https://raw.githubusercontent.com/devoperdotkiwis/Cineone/refs/heads/main/Brands%20we%20deal/Images/22.webp" alt="Brand 22" loading="lazy">
+        <img src="https://raw.githubusercontent.com/devoperdotkiwis/Cineone/refs/heads/main/Brands%20we%20deal/Images/23.webp" alt="Brand 23" loading="lazy">
+        <img src="https://raw.githubusercontent.com/devoperdotkiwis/Cineone/refs/heads/main/Brands%20we%20deal/Images/24.webp" alt="Brand 24" loading="lazy">
+        <img src="https://raw.githubusercontent.com/devoperdotkiwis/Cineone/refs/heads/main/Brands%20we%20deal/Images/25.webp" alt="Brand 25" loading="lazy">
+        <img src="https://raw.githubusercontent.com/devoperdotkiwis/Cineone/refs/heads/main/Brands%20we%20deal/Images/26.webp" alt="Brand 26" loading="lazy">
+        <img src="https://raw.githubusercontent.com/devoperdotkiwis/Cineone/refs/heads/main/Brands%20we%20deal/Images/27.webp" alt="Brand 27" loading="lazy">
+        <img src="https://raw.githubusercontent.com/devoperdotkiwis/Cineone/refs/heads/main/Brands%20we%20deal/Images/28.webp" alt="Brand 28" loading="lazy">
+        <img src="https://raw.githubusercontent.com/devoperdotkiwis/Cineone/refs/heads/main/Brands%20we%20deal/Images/29.webp" alt="Brand 29" loading="lazy">
+        <img src="https://raw.githubusercontent.com/devoperdotkiwis/Cineone/refs/heads/main/Brands%20we%20deal/Images/30.webp" alt="Brand 30" loading="lazy">
+        <img src="https://raw.githubusercontent.com/devoperdotkiwis/Cineone/refs/heads/main/Brands%20we%20deal/Images/1.webp" alt="Brand 1" loading="lazy">
+        <img src="https://raw.githubusercontent.com/devoperdotkiwis/Cineone/refs/heads/main/Brands%20we%20deal/Images/2.webp" alt="Brand 2" loading="lazy">
+        <img src="https://raw.githubusercontent.com/devoperdotkiwis/Cineone/refs/heads/main/Brands%20we%20deal/Images/3.webp" alt="Brand 3" loading="lazy">
+        
+    </div>
+</div>
