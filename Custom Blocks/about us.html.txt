@@ -1,0 +1,145 @@
+<article>
+    <section class="hero-section">
+        <div class="hero-image">
+            <img src="https://media.sonos.com/images/znqtjj88/production/9cfebdf8bb8bebd188b76ba2792a7604a51afc32-1492x1492.jpg?w=640&q=100&fit=clip&auto=format" alt="Premium Home Entertainment Experience" loading="lazy">
+        </div>
+        <div class="hero-content">
+            <h1>Immerse Yourself</h1>
+            <p>Experience the magic of sound that transforms your home into a haven of entertainment.</p>
+            <a href="#" class="cta-button">Discover More</a>
+        </div>
+    </section>
+    <style scoped>
+        /* Define custom fonts */
+        @font-face {
+            font-family: 'HeadingFont';
+            src: url('https://github.com/devoperdotkiwis/Cineone/blob/d6a4c8a1376a8941057dc5ebf3629f7bc28ca97f/Font/FontsFree-Net-Aktiv-Grotesk-W01-Medium.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'ParagraphFont';
+            src: url('https://github.com/devoperdotkiwis/Cineone/blob/d6a4c8a1376a8941057dc5ebf3629f7bc28ca97f/Font/AnyConv.com__FontsFree-Net-Arial-medium.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        :root {
+            --primary-color: #E53935; /* Red */
+            --secondary-color: #424242; /* Dark Grey */
+            --light-color: #FAFAFA; /* Light Grey */
+            --text-color: #757575; /* Medium Grey */
+            --font-heading: 'HeadingFont', sans-serif;
+            --font-paragraph: 'ParagraphFont', sans-serif;
+        }
+
+        .hero-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+            background: linear-gradient(135deg, var(--light-color) 0%, white 100%);
+            font-family: var(--font-paragraph);
+        }
+
+        .hero-content, .hero-image {
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .hero-image {
+            margin-bottom: 20px;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-family: var(--font-heading);
+            font-size: 2em;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            letter-spacing: -0.5px;
+            text-transform: uppercase;
+        }
+
+        p {
+            font-family: var(--font-paragraph);
+            font-size: 1em;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+
+        .cta-button {
+            background: var(--primary-color);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1em;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: background 0.3s, transform 0.3s;
+            margin-top: 20px;
+        }
+
+        .cta-button:hover {
+            background: #D32F2F;
+            transform: translateY(-3px);
+        }
+
+        @media (min-width: 769px) {
+            .hero-section {
+                flex-direction: row;
+                padding: 40px;
+            }
+
+            .hero-image {
+                width: 45%;
+                margin-right: 40px;
+                margin-bottom: 0;
+            }
+
+            .hero-content {
+                width: 55%;
+            }
+
+            h1 {
+                font-size: 3em;
+            }
+
+            p {
+                max-width: 500px;
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-image, .hero-content, h1, p, .cta-button {
+            animation: fadeInUp 1s ease-out;
+        }
+    </style>
+</article>
